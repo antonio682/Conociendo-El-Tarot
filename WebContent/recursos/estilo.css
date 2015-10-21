@@ -1,0 +1,260 @@
+@import url(https://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo);
+
+@import url(https://fonts.googleapis.com/css?family=Bad+Script);
+/*significados*/
+@import url(https://fonts.googleapis.com/css?family=Kaushan+Script);
+/*titulo*/
+/*fuente parrafos*/
+.body {
+	background-image: url('fondo.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	
+}
+
+.cabecera {
+	/*background-color: #BA19BA;*/
+	text-align: center;
+	color: #33FFFF;
+	font-family: 'Kaushan Script', cursive;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cb60b3+0,ad1283+50,de47ac+100;Pink+3D */
+	background: #cb60b3; /* Old browsers */
+	background: -moz-linear-gradient(top, #cb60b3 0%, #ad1283 50%, #de47ac 100%);
+	/* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #cb60b3),
+		color-stop(50%, #ad1283), color-stop(100%, #de47ac));
+	/* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #cb60b3 0%, #ad1283 50%, #de47ac 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #cb60b3 0%, #ad1283 50%, #de47ac 100%);
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #cb60b3 0%, #ad1283 50%, #de47ac 100%);
+	/* IE10+ */
+	background: linear-gradient(to bottom, #cb60b3 0%, #ad1283 50%, #de47ac 100%);
+	/* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cb60b3',
+		endColorstr='#de47ac', GradientType=0); /* IE6-9 */
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+h1 {
+	font-size: 400%;
+}
+
+.hpresentacion {
+	font-size: 400%;
+	font-family: 'Swanky and Moo Moo', cursive;
+	color: #FFE6FF;
+	font-weight: bolder;
+}
+
+p {
+	font-family: 'Swanky and Moo Moo', cursive;
+	color: white;
+	font-size: x-large;
+	font-weight: bolder;
+}
+
+/* barra de navegacion */
+
+/* navbar */
+.navbar-default {
+	/* background-color: #BA19BA; */
+	border: none;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cb60b3+0,ad1283+50,de47ac+100;Pink+3D */
+	background: #cb60b3; /* Old browsers */
+	background: -moz-linear-gradient(top, #cb60b3 0%, #ad1283 50%, #de47ac 100%);
+	/* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #cb60b3),
+		color-stop(50%, #ad1283), color-stop(100%, #de47ac));
+	/* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #cb60b3 0%, #ad1283 50%, #de47ac 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #cb60b3 0%, #ad1283 50%, #de47ac 100%);
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #cb60b3 0%, #ad1283 50%, #de47ac 100%);
+	/* IE10+ */
+	background: linear-gradient(to bottom, #cb60b3 0%, #ad1283 50%, #de47ac 100%);
+	/* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cb60b3',
+		endColorstr='#de47ac', GradientType=0); /* IE6-9 */
+	margin-top: 3%;
+}
+/* title */
+.navbar-default .navbar-brand {
+	color: #777;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus
+	{
+	color: #FFE6FF;
+}
+/* link */
+.navbar-default .navbar-nav>li>a {
+	color: #fccdf9;
+	font-size: xx-large;
+	font-weight: bolder;
+	font-family: 'Swanky and Moo Moo', cursive;
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus
+	{
+	color: #BA19BA;
+	font-size: xx-large;
+	font-weight: bolder;
+	background-color: #FFE6FF;
+	font-family: 'Swanky and Moo Moo', cursive;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover,
+	.navbar-default .navbar-nav>.active>a:focus {
+	color: #555;
+	background-color: #E7E7E7;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover,
+	.navbar-default .navbar-nav>.open>a:focus {
+	color: #555;
+	background-color: #D5D5D5;
+}
+/* caret */
+.navbar-default .navbar-nav>.dropdown>a .caret {
+	border-top-color: #777;
+	border-bottom-color: #777;
+}
+
+.navbar-default .navbar-nav>.dropdown>a:hover .caret, .navbar-default .navbar-nav>.dropdown>a:focus .caret
+	{
+	border-top-color: #333;
+	border-bottom-color: #333;
+}
+
+.navbar-default .navbar-nav>.open>a .caret, .navbar-default .navbar-nav>.open>a:hover .caret,
+	.navbar-default .navbar-nav>.open>a:focus .caret {
+	border-top-color: #555;
+	border-bottom-color: #555;
+}
+/* mobile version */
+.navbar-default .navbar-toggle {
+	border-color: #fccdf9;
+	border-width: thick;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus
+	{
+	background-color: #33FFFF;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #fccdf9;
+	border-width: thick;
+}
+/* datgrid */
+.ui-datagrid-data {
+	width: 100%;
+	background-color: transparent;
+	border: 2px solid blue;
+}
+
+.ui-datagrid-column {
+	padding: 30px;
+	background-color: #FFB8FF;
+}
+
+.ui-fieldset .ui-state-default {
+	background: none;
+	background-color: rgb(255, 153, 255);
+	margin-top: 50px;
+	color: black;
+	font-family: 'Swanky and Moo Moo', cursive;
+}
+
+.presentacionParrafo {
+	border: 2px solid #470047;
+	background-color: rgba(255, 153, 255, 0.5);
+	text-align: center;
+	padding-bottom: 15%;
+}
+
+.significados {
+	border: 2px solid red;
+	background-color: rgb(255, 153, 255);
+	text-shadow: 1px 1px pink;
+	font-family: 'Bad Script', cursive;
+	font-size: medium;
+	/* background-color: rgba(51, 0, 51, 0.6); */
+	color: black;
+	padding: 20px;
+	margin-top: 10px;
+	padding: 20px;
+	font-weight: bolder;
+}
+
+.boton {
+	width: 400px;
+	heigth: 120px;
+	font-family: 'Swanky and Moo Moo', cursive;
+	font-size: x-large;
+	border: none;
+	background-color: #470047;
+	color: rgb(255, 153, 255);
+	border-radius: 10px;
+	padding: 10px;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.boton1 {
+	width: 400px;
+	heigth: 100px;
+	font-family: 'Swanky and Moo Moo', cursive;
+	font-size: x-large;
+	background-color: rgb(255, 153, 255);
+	color: #470047;
+	border-radius: 10px;
+	padding: 10px;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.boton1:HOVER {
+	font-family: 'Swanky and Moo Moo', cursive;
+	background-color: #591959;
+	color: rgb(255, 153, 255);
+	border: none;
+	border-radius: 10px;
+	padding: 10px;
+	text-decoration: none;
+}
+
+.boton:HOVER {
+	font-family: 'Swanky and Moo Moo', cursive;
+	background-color: rgb(255, 153, 255);
+	color: black;
+	border: none;
+	color: black;
+	border-radius: 10px;
+	padding: 10px;
+	text-decoration: none;
+}
+
+.parrafo {
+	color: rgb(255, 51, 255);
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	font-family: 'Swanky and Moo Moo', cursive;
+}
+
+.parrafoInicio {
+	color: white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	font-family: 'Swanky and Moo Moo', cursive;
+}
+
+.encabezadoParrafo {
+	color: rgb(255, 200, 255);
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	font-family: 'Swanky and Moo Moo', cursive;
+	font-weight: bolder;
+	font-size: xx-large;
+}

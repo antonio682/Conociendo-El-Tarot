@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui" xmlns:jsf="http://xmlns.jcp.org/jsf">
+<h:head>
+	<meta charset="UTF-8" />
+	<title>Tarot</title>
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+	<!-- Latest compiled and minified CSS -->
+	<script type="text/javascript"
+		src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript"
+		src="http://code.jquery.com/jquery.min.js"></script>
+	<script type="text/javascript"
+		src="http://getbootstrap.com/dist/js/bootstrap.js"></script>
+	<link type="text/css" rel="stylesheet"
+		href="http://getbootstrap.com/dist/css/bootstrap.css" />
+	<link rel="stylesheet" href="recursos/estilo.css" />
+
+</h:head>
+<h:body class="body">
+	<header class=" cabecera ">
+		<br />
+		<h1>
+			<STRONG>Conociendo El Tarot</STRONG>
+		</h1>
+		<h3>
+			<STRONG>Inspirate en los Arcanos</STRONG>
+		</h3>
+		<!-- barra de navegacion bootstrap -->
+		<h:form>
+			<nav role="navigation"
+				class="navbar navbar-default navbar-fixed-header nav ">
+
+				<div class="navbar-header"
+					style="padding-left: 40px; margin-right: 150px;">
+					<button type="button" data-target="#navbarCollapse"
+						data-toggle="collapse" class="navbar-toggle">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+
+					<img src="recursos/logotipo_bruja.png" style="height: 75px;" /> <a
+						href="http://www.facebook.com/Conociendo-El-Tarot-542211272598130/timeline/?ref=aymt_homepage_panel"
+						target="_blank"><img alt="Siguenos en Facebook"
+						src="https://lh3.googleusercontent.com/-NSLbC_ztNls/T6VX0g6z8AI/AAAAAAAAA0A/_vyIBrmZbuY/s48/facebook48.png"
+						width='40' height='40' /></a>
+
+				</div>
+
+				<div id="navbarCollapse" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav"
+						style="margin-top: 1%; padding-top: 0px; padding-left: 0px;">
+
+						<li style="margin-left: 0px;"><a
+							jsf:action="inicioTirada?=faces-redirect=true"
+							jsf:actionListener="#{invalidarSesionBean.processAction}">
+								Inicio</a></li>
+						<li style="margin-left: 0px;"><a
+							jsf:action="tiradaNormalNormal?faces-redirect=true"
+							jsf:actionListener="#{invalidarSesionBean.processAction}">Tirada
+								Completa</a></li>
+						<li style="margin-left: 0px;"><a jsf:action="tirada"
+							jsf:actionListener="#{invalidarSesionBean.processAction}">Presente,
+								Pasado y Futuro</a></li>
+					</ul>
+				</div>
+
+			</nav>
+		</h:form>
+		<br />
+	</header>
+	<div class="container">
+		<div id="seleccionIntroNormal" class="row "
+			style="background-color: rgba(61, 0, 61, 0.4); border: 2px solid pink; padding: 10px; margin-top: 5px; margin-bottom: 5px;">
+			<h1 class="hpresentacion">
+				Este es tu resultado
+				<h:outputText value="#{resultadoTirandaSiBean.ps.nombre}" />
+			</h1>
+
+			<p style="text-shadow: 1px 1px black;">
+				Realiza la lectura en un lugar tranquilo y procura dejar que las
+				cates de hablen para llegar al fondo de ti.. <br /> Muchas gracias
+				y vuelve cuando quieras!!!
+			</p>
+
+		</div>
+		<script type="text/javascript">
+			function handleDrop(event, ui) {
+				var droppedCar = ui.draggable;
+
+				droppedCar.fadeOut('fast');
+			}
+		</script>
+
+		<h:form id="carForm" class="ui-grid">
+
+			<p:dataGrid id="availableCars" var="car"
+				value="#{resultadoTirandaSiBean.resultadoFinal}" columns="1"
+				layout="grid" style="margin-top: 20px; background-color: black;"
+				class="ui-grid-col-12">
+
+				<h:graphicImage height="200" url="#{car.imagen}.jpg"
+					style=" margin-left:45%;" />
+				<br />
+				<div class="significados" align="center">
+					<h:outputText value="#{car.nombre}" />
+					<br />
+					<h:outputText value="#{car.significado}" />
+				</div>
+
+			</p:dataGrid>
+
+
+		</h:form>
+		<div align="center">
+			<h:form>
+
+				<h:commandButton action="presentacionTiradaSi?faces-redirect=true"
+					value="Volver a Tirar cartas" class=" boton"
+					style="margin-left: 40px; margin-top:10px; margin-bottom: 20px;"
+					actionListener="#{invalidarSesionBean.processAction}">
+				</h:commandButton>
+				<h:commandButton action="inicioTarot?faces-redirect=true"
+					value="Ir a Inicio" class=" boton"
+					style="margin-left: 40px; margin-top:10px; margin-bottom: 20px;"
+					actionListener="#{invalidarSesionBean.processAction}">
+				</h:commandButton>
+
+			</h:form>
+		</div>
+	</div>
+
+	<footer class="cabecera">
+		<br /> <img src="recursos/logo_eric.jpg" alt="" height="80px"
+			style="border-radius: 20px; border: 2px solid #470047;" />
+		<p style="color: #470047; text-shadow: 1px 1px pink;">
+			ErikDevs<br />2015
+		</p>
+		<br />
+	</footer>
+</h:body>
+</html>
+

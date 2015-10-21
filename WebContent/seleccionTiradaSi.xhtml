@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta charset="UTF-8" />
+	<title>Tarot</title>
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+	<!-- Latest compiled and minified CSS -->
+
+	<f:facet name="first">
+		<h:outputScript library="js" name="bootstrap.js" />
+	</f:facet>
+	<h:outputScript library="primefaces" name="jquery/jquery.js" />
+	<h:outputScript library="js" name="bootstrap-dropdown.js" />
+	<link type="text/css" rel="stylesheet"
+		href="http://getbootstrap.com/dist/css/bootstrap.css" />
+	<link rel="stylesheet" href="recursos/estilo.css" />
+
+</h:head>
+
+<h:body class="body">
+	<header class=" cabecera ">
+		<br />
+		<h1>
+			<STRONG>Conociendo El Tarot</STRONG>
+		</h1>
+		<h3>
+			<STRONG>Inspirate en los Arcanos</STRONG>
+		</h3>
+		<!-- barra de navegacion bootstrap -->
+		<br />
+
+	</header>
+	<div class="container">
+		<div id="seleccionIntroNormal" class="row col-md-10"
+			style="background-color: rgba(61, 0, 61, 0.4); border: 2px solid pink; padding: 10px; margin-left: 8%; margin-top: 5px;">
+			<h1 class="hpresentacion">
+				Bienvenido
+				<h:outputText 
+					value="#{seleccionTiradaSiBean.pt.nombre}" />
+			</h1>
+
+			<p style="text-shadow: 1px 1px black;">En esta tirada has de
+				seleccionar 1 carta, concentrate en tu pregunta antes de arrastralas
+				y ella te dirá si el resultado de tu consulta es positivo o
+				negativo.</p>
+
+		</div>
+		<script type="text/javascript">
+			function handleDrop(event, ui) {
+				var droppedCar = ui.draggable;
+
+				droppedCar.fadeOut('fast');
+			}
+		</script>
+
+		<h:form id="carForm" class="ui-grid">
+			<p:fieldset class="ui-grid-col-10"
+				style="margin-left: 8%; margin-top: 50px; background-color: rgba(51,0,51,0.6); text-align:center;"
+				legend="Arrastra 1 carta Abajo">
+				<p:dataGrid id="availableCars" var="car"
+					value="#{seleccionTiradaSiBean.mazo}" columns="12" layout="grid"
+					style=" border: 1px solid purple; ">
+
+					<p:graphicImage id="imagenCarta" height="140"
+						url="http://www.taroticallyspeaking.com/wp-content/uploads/2010/12/78-Back-165x300.jpg"
+						style="padding-left: -10px; margin-left: -30px;" />
+					<p:draggable for="imagenCarta" revert="true" />
+
+				</p:dataGrid>
+
+			</p:fieldset>
+			<p:fieldset id="selectedCars" legend="Carta Elegida ( Elige 1)"
+				class="ui-grid-col-10"
+				style="margin-top:20px; background-color: rgba(51,0,51,0.6); margin-left:8%; text-align:center;">
+				<p:outputPanel id="dropArea">
+					<h:outputText value="!!!Arrastra 1 Carta Aqui!!!"
+						rendered="#{empty seleccionTiradaSiBean.cartasSeleccionadas}"
+						style="font-size:24px; color:white" />
+					<h:outputText
+						value=" #{seleccionTiradaSiBean.contador} Carta Seleccionada de 1"
+						style="color: yellow ; font-size: XX-large; padding-left: 8%;font-family: 'Swanky and Moo Moo', cursive; "
+						rendered="#{not empty seleccionTiradaSiBean.cartasSeleccionadas}" />
+					<p:dataGrid id="selectedCarsTable" var="car" columns="1"
+						layout="grid" class="ui-grid-col-10"
+						value="#{seleccionTiradaSiBean.cartasSeleccionadas}"
+						rendered="#{not empty seleccionTiradaSiBean.cartasSeleccionadas}"
+						style=" margin-left: 8%; padding: 0px; background-color: red !important;">
+						<p:column style="margin-left:0px; border: 1px solid blue;">
+							<p:graphicImage id="imagenCarta" height="140"
+								url="http://www.taroticallyspeaking.com/wp-content/uploads/2010/12/78-Back-165x300.jpg" />
+						</p:column>
+
+					</p:dataGrid>
+				</p:outputPanel>
+			</p:fieldset>
+
+			<p:droppable for="selectedCars" tolerance="touch"
+				activeStyleClass="ui-state-highlight" datasource="availableCars"
+				onDrop="handleDrop">
+				<p:ajax listener="#{seleccionTiradaSiBean.onCarDrop}"
+					update="dropArea availableCars" />
+			</p:droppable>
+
+		</h:form>
+		<br />
+		<h:form align="center">
+			<div align="center">
+				<h:commandButton action="resultadoTiradaSi?faces-redirect=true"
+					value="VER SIGNIFICADO" class=" boton" />
+			</div>
+		</h:form>
+		<br />
+	</div>
+
+	<footer class="cabecera">
+		<br /> <img src="recursos/logo_eric.jpg" alt="" height="80px"
+			style="border-radius: 20px; border: 2px solid #470047;" />
+		<p style="color: #470047; text-shadow: 1px 1px pink;">
+			ErikDevs<br />2015
+		</p>
+		<br />
+	</footer>
+</h:body>
+</html>
+
