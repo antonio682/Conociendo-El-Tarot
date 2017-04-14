@@ -1,29 +1,7 @@
-# README #
-
-This README would normally document whatever steps are necessary to get your application up and running.
-
-### What is this repository for? ###
-
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
-
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+# Conociendo el Tarot APP V 1.0 #
+   
+   Esta es una aplicación web completa realizada en con una integración de Spring 4 y JSF con MySQL como base de datos. Las vistas son JSP's con PrimeFaces y JQUERY.
+   
+   This is an full developed tarot app made using Spring 4 and JSF integration, MySQL, JSP's and PrimFaces as stack.
+   
+   #Erik Devs 2017#
